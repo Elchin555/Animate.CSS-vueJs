@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+	body{
+		background-color: rgb(41, 128, 0);
+	}
+	p{
+		border: 1px solid white;
+		font-size: 25px;
+		color: white;
+		width: 50%
+	}
+	button{
+		background-color: yellow;
+		margin: 5px;
+		font-size: 16px;
+
+	}
+</style>
+
+<body>
+<div id="app">
+	<div>
+		<button @click="show=!show">Show/Hide</button>
+	<transition 
+       enter-class=""
+       enter-active-class="animate__animated animate__backOutDown"
+       leave-class=""
+       leave-active-class="animate__animated animate__backOutDown"
+	>
+	<p v-if="show">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+	<div>
+		<button @click="showone=!showone">Show/Hide</button>
+	<transition 
+       enter-class=""
+
+       enter-active-class="animate__animated animate__rubberBand"
+       leave-class=""
+       leave-active-class="animate__animated animate__shakeY"
+	>
+	<p v-if="showone">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+	<div>
+		<button @click="showtwo=!showtwo">Show/Hide</button>
+	<transition 
+       enter-class=""
+       enter-active-class="animate__animated animate__wobble"
+       leave-class=""
+       leave-active-class="animate__animated animate__jello"
+	>
+	<p v-if="showtwo">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+	<div>
+		<button @click="showthird=!showthird">Show/Hide</button>
+	<transition 
+       enter-class=""
+       enter-active-class="animate__animated animate__bounceInUp"
+       leave-class=""
+       leave-active-class="animate__animated animate__bounceOutUp"
+	>
+	<p v-if="showthird">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+	<div>
+		<button @click="showfour=!showfour">Show/Hide</button>
+	<transition 
+       enter-class=""
+       enter-active-class="animate__animated animate__fadeInUp"
+       leave-class=""
+       leave-active-class="animate__animated animate__fadeInDownBig"
+	>
+	<p v-if="showfour">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+	<div>
+		<button @click="showfive=!showfive">Show/Hide</button>
+	<transition 
+       enter-class=""
+       enter-active-class="animate__animated animate__rotateInDownRight"
+       leave-class=""
+       leave-active-class="animate__animated animate__rotateOut"
+	>
+	<p v-if="showfive">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+	<div>
+		<button @click="showsix=!showsix">Show/Hide</button>
+	<transition 
+       enter-class=""
+       enter-active-class="animate__animated animate__jackInTheBox"
+       leave-class=""
+       leave-active-class="animate__animated animate__hinge"
+	>
+	<p v-if="showsix">{{msg}}</p>
+
+	</transition>
+	</div>
+	
+	<hr>
+
+</div>
+</body>
+<script >
+	new Vue({
+		el:"#app",
+		data(){
+			return{
+				msg:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+				show:true,
+				showone:true,
+				showtwo:true,
+				showthird:true,
+				showfour:true,
+				showfive:true,
+				showsix:true,
+			}
+		}
+	})
+</script>
+</html>
